@@ -1,8 +1,22 @@
 .button{
-  background-color: $button-green;
   border: none;
-  border: .3rem solid darken($button-green, 5%);
   border-radius: 3px;
   color:white;
+}
+
+.button-add{
+  background-color: $button-green;
+  border: .3rem solid darken($button-green, 5%);
   padding: .7em;
+}
+
+.button-delete{
+  display: inline-block;
+  background-color: $button-red;
+  border: .3rem solid darken($button-red, 5%);
+  padding: .5em;
+}
+.task-text{
+  display: inline-block;
+  margin-right: 3em;
 }
