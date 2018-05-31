@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SimpleApp from "./components/SimpleApp";
 
 import "normalize.css/normalize.css";
 import './styles/styles.scss';
@@ -8,4 +9,4 @@ import './styles/styles.scss';
 
 
 
-ReactDOM.render(<p>Simple React App</p>, document.getElementById('app'));
+ReactDOM.render(<SimpleApp />, document.getElementById('app'));
