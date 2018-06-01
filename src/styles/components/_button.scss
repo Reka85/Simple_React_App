@@ -2,12 +2,15 @@
   border: none;
   border-radius: 3px;
   color:white;
+  // margin-right: 8em;
 }
 
 .button-add{
   background-color: $button-green;
   border: .3rem solid darken($button-green, 5%);
   padding: .7em;
+  position: relative;
+  top: -0.4em;
 }
 
 .button-delete{
@@ -21,8 +24,7 @@
   opacity: 0.3;
 }
 
-
 .task-text{
   display: inline-block;
-  margin-right: 3em;
+  // margin-left: 3em;
 }

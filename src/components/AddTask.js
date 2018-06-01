@@ -24,22 +24,23 @@ class AddTask extends React.Component {
       return <option key={category} value={category}>{category}</option>
     });
     return(
-      <div>
-        <h3>Add a task</h3>
+      <div className="add-tasks">
+        <h2>Add a task</h2>
         <form onSubmit={this.addNewTask}>
-          <div>
-            <label>Task name</label>
-            <input type="text" ref="name" name="taskName" placeholder="Walk the dog"/>
+          <div className="form-inputs">
+            <div>
+              <label>Task name</label>
+              <input type="text" ref="name" name="taskName" placeholder="Walk the dog"/>
+            </div>
+
+            <div>
+              <label>Category</label>
+              <select ref="category">
+                {categoryOptions}
+              </select>
+            </div>
+            <button className="button button-add">Add task</button>
           </div>
-          <br/>
-          <div>
-            <label>Category</label>
-            <select ref="category">
-              {categoryOptions}
-            </select>
-          </div>
-          <br/>
-          <button className="button button-add">Add task</button>
         </form>
       </div>
     );
