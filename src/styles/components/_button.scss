@@ -16,6 +16,12 @@
   border: .3rem solid darken($button-red, 5%);
   padding: .5em;
 }
+
+.button-delete:disabled {
+  opacity: 0.3;
+}
+
+
 .task-text{
   display: inline-block;
   margin-right: 3em;

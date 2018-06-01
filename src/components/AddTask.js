@@ -29,7 +29,7 @@ class AddTask extends React.Component {
         <form onSubmit={this.addNewTask}>
           <div>
             <label>Task name</label>
-            <input type="text" ref="name" name="taskName"/>
+            <input type="text" ref="name" name="taskName" placeholder="Walk the dog"/>
           </div>
           <br/>
           <div>

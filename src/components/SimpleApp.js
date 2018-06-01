@@ -14,13 +14,19 @@ export default class SimpleApp extends React.Component {
     if(filteredTasks.length === 0) {
       this.setState((prevState) => ({
         tasks: prevState.tasks.concat(newTask)
-      }))
+      }));
     }
   }
 
-  handleDeleteTask = (taskName, taskCategory) => {
+  handleDeleteTask = (taskName) => {
     this.setState((prevState) => ({
       tasks: prevState.tasks.filter((task) => task.name !== taskName)
+    }));
+  }
+
+  handleClearTasks = () => {
+    this.setState(() => ({
+      tasks: []
     }));
   }
 
@@ -33,7 +39,8 @@ export default class SimpleApp extends React.Component {
 
             <div className="tasks">
               <Tasks tasks={this.state.tasks}
-                handleDeleteTask={this.handleDeleteTask}/>
+                handleDeleteTask={this.handleDeleteTask}
+                clearTasks={this.handleClearTasks}/>
             </div>
           </div>
       </div>
