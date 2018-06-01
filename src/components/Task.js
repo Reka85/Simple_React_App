@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Task = (props) => (
   <div className="task">
     <p className="task-text">{props.count}. {props.taskName} - {props.category}</p>
@@ -12,5 +13,6 @@ const Task = (props) => (
     </button>
   </div>
 );
+
 
 export default Task;

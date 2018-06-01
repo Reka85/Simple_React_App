@@ -1,5 +1,6 @@
 import React from "react";
 import Task from "./Task";
+import PropTypes from "prop-types";
 
 const Tasks = (props) => (
   <div className="tasks">
@@ -26,5 +27,11 @@ const Tasks = (props) => (
     </div>
   </div>
 );
+
+Tasks.propTypes = {
+  tasks: PropTypes.array,
+  handleDeleteTask: PropTypes.func,
+  clearTasks: PropTypes.func
+}
 
 export default Tasks;

@@ -1,5 +1,6 @@
 import React from "react";
 import uuid from "uuid";
+import PropTypes from "prop-types";
 
 class AddTask extends React.Component {
   state = {
@@ -57,4 +58,10 @@ class AddTask extends React.Component {
 AddTask.defaultProps = {
   categories: ["Pets", "Cleaning", "Repair", "Clothes", "Food", "Other"]
 }
+
+AddTask.propTypes = {
+  categories: PropTypes.array,
+  handleAddTask: PropTypes.func
+}
+
 export default AddTask;
