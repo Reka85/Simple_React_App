@@ -1,12 +1,12 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 
 const Task = (props) => (
   <div className="task">
-    <p className="task-text">{props.count}. {props.taskName} - {props.category}</p>
+    <p className="task-text">{props.count}. {props.task.name} - {props.task.category}</p>
     <button className="button button-delete"
       onClick={(e) => {
-        props.handleDeleteTask(props.taskName, props.category);
+        props.handleDeleteTask(props.task.name, props.task.category);
       }}
     >
       Delete
@@ -14,5 +14,10 @@ const Task = (props) => (
   </div>
 );
 
+Task.propTypes = {
+  task: PropTypes.object,
+  count: PropTypes.number,
+  handleDeleteTask: PropTypes.func
+}
 
 export default Task;

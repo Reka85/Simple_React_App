@@ -17,8 +17,7 @@ const Tasks = (props) => (
         props.tasks.map((task, index) => (
           <Task
             key={task.name}
-            taskName={task.name}
-            category={task.category}
+            task={task}
             count={index + 1}
             handleDeleteTask={props.handleDeleteTask}
           />
