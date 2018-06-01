@@ -2,21 +2,27 @@ import React from "react";
 import uuid from "uuid";
 
 class AddTask extends React.Component {
+  state = {
+    error: undefined
+  };
 
   addNewTask = (e) =>{
     e.preventDefault();
-    if (this.refs.name.value ===""){
-      alert("Task name is required")
-    } else {
-      const newTask = {
-        id: uuid.v4(),
-        name: this.refs.name.value,
-        category: this.refs.category.value
-      }
-      //clear input field
-      e.target.elements.taskName.value = "";
-      this.props.handleAddTask(newTask);
+    const newTask = {
+      id: uuid.v4(),
+      name: this.refs.name.value,
+      category: this.refs.category.value
     }
+
+    //clear input field
+    e.target.elements.taskName.value = "";
+
+    //returns error message if task is not valid
+    const error = this.props.handleAddTask(newTask);
+
+    this.setState(() => ({
+      error
+    }));
   }
 
   render(){
@@ -41,6 +47,7 @@ class AddTask extends React.Component {
             </div>
             <button className="button button-add">Add task</button>
           </div>
+          {this.state.error && <p className="error-message">{this.state.error}</p>}
         </form>
       </div>
     );

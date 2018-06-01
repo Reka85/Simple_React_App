@@ -8,14 +8,20 @@ export default class SimpleApp extends React.Component {
     tasks: []
   };
 
-  //add it if it is not already in the list
   handleAddTask = (newTask) => {
     const filteredTasks = this.state.tasks.filter((task) => task.name === newTask.name)
-    if(filteredTasks.length === 0) {
-      this.setState((prevState) => ({
-        tasks: prevState.tasks.concat(newTask)
-      }));
+    //throws error if there is already a task with the same name
+    if (filteredTasks.length > 0){
+      return "The task is already in the list";
     }
+    //throws error if task name is empty
+    else if(newTask.name === ""){
+      return "Enter a valid task name";
+    }
+    // if there is no error adds the task to the list
+    this.setState((prevState) => ({
+      tasks: prevState.tasks.concat(newTask)
+    }));
   }
 
   handleDeleteTask = (taskName) => {
